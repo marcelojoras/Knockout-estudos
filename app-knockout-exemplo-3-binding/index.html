@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lista de itens</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style>
+		.item-checked {
+			color: #ddd;
+			text-decoration: line-through;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-8 col-xs-offset-2">
+				<br><br>
+				<div class="panel panel-default">
+				<div class="panel-heading"><h4>Itens de supermercado</h4></div>
+				<div class="panel-body">
+					<!-- Linha superior -->
+					<div class="row" data-bind="with: alerta">
+						<div class="alert" data-bind="text:mensagem, css:tipo, visible:mostrar"></div>
+					</div>
+					<div class="row">
+						<!-- COL ESQUERDA -->
+						<div class="col-xs-6">
+							<br/>
+							<b>Lista de itens</b>
+							<ul class="list-group" data-bind="foreach:lista">
+								<li class="list-group-item" data-bind="css: {'item-checked': $data.checado}">
+									<input type="checkbox" data-bind="checked:$data.checado">
+									<!-- ko text:descricao --><!-- /ko -->
+								</li>
+							</ul>
+							<div class="col-sx-12">
+								<b>Total de itens na lista: </b><!-- ko text:lista().length --><!-- /ko -->
+								<br>
+								<b>Total de itens checados: </b><!-- ko text:itensChecados --><!-- /ko -->
+								<br>
+								<b>Total de itens não checados: </b><!-- ko text:itensNaoChecados --><!-- /ko -->
+							</div>
+						</div>
+						<!-- COL DIREITA -->
+						<div class="col-xs-6">
+							<br>
+							<b>Descrição do item</b>
+							<br>
+							<input type="text" name="desc-item" class="form form-control" data-bind="value:descricaoItem">
+							<br>
+							<button class="btn btn-primary" data-bind="click:incluirItem">Incluir item</button>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="js/knockout-3.4.2.js"></script>
+	<script src="js/ViewModel.js"></script>
+</body>
+</html>
