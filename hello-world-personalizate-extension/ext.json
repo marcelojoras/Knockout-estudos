@@ -1,0 +1,19 @@
+{
+	"extensionID": "d991ecce-8367-42c3-8bd2-4366899013e3",
+	"developerID": "99999",
+	"createdBy": "Marcelo Joras",
+	"timeCreated": "2018-04-27",
+	"version": 1,
+	"translations": [
+		{
+			"language": "en_US",
+			"name": "Hello World personalizated",
+			"description": "Hello World personalizated"
+		},
+		{
+			"language": "pt_BR",
+			"name": "Hello World marcelo pt",
+			"description": "Hello World personalizável pt"
+		}
+	]
+}

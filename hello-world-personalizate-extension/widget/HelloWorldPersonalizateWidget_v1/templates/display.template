@@ -1,0 +1,14 @@
+<div class="jumbotron text-center">
+	<br>
+	<!-- ko ifnot: user().loggedIn -->
+	<h2 data-bind="widgetLocaleText:'hello'"></h2>
+	<!-- /ko -->
+	<!-- ko if: user().loggedIn -->
+	<h2 data-bind="widgetLocaleText:{
+		value: 'helloName',
+		attr: 'innerText',
+		params: {name: user().firstName()}
+	}"></h2>
+	<!-- /ko -->
+	<br>
+</div>
